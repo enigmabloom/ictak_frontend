@@ -117,7 +117,7 @@ const NavBar = () => {
                 flexGrow: 1,
             }}
         >
-            <img src="../dist/logo/iip-white.png" alt="ICTAK Internship Portal Logo" style={{width: '10rem'}} />
+            <img src="/logo/iip-white.png" alt="ICTAK Internship Portal Logo" style={{width: '10rem'}} />
         </Box>
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
           {pages.map((page) => (
