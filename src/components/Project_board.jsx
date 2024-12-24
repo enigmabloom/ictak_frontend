@@ -57,7 +57,7 @@ const ProjectBoard = () => {
     formData.append('submissionFile', finalFile);
 
     try {
-      await axios.post('http://localhost:3000/submission/final', formData, {
+      await axios.post('https://ictstudentportal.onrender.com/submission/final', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -94,7 +94,7 @@ const ProjectBoard = () => {
     formData.append('submissionFile', weeklyFile);
 
     try {
-      await axios.post('http://localhost:3000/submission/weekly', formData, {
+      await axios.post('https://ictstudentportal.onrender.com/submission/weekly', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -129,7 +129,7 @@ const ProjectBoard = () => {
   const handleReferenceDownload = async (type) => {
     try {
       const projectId = student?.selectedProject;
-      const response = await axios.get(`http://localhost:3000/document/${type}/download/${projectId}`, { responseType: 'arraybuffer'});
+      const response = await axios.get(`https://ictstudentportal.onrender.com/document/${type}/download/${projectId}`, { responseType: 'arraybuffer'});
 
       const blob = new Blob([response.data], { type: 'application/pdf' });
       const link = document.createElement('a');
@@ -145,7 +145,7 @@ const ProjectBoard = () => {
 
   const handleWeeklySubmissionFormatDownload = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/document/weeklySubmissionFormat/download`, { responseType: 'arraybuffer'});
+      const response = await axios.get(`https://ictstudentportal.onrender.com/document/weeklySubmissionFormat/download`, { responseType: 'arraybuffer'});
 
       const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
@@ -162,7 +162,7 @@ const ProjectBoard = () => {
 
   const handleFinalSubmissionFormatDownload = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/document/finalSubmissionFormat/download`, { responseType: 'arraybuffer'});
+      const response = await axios.get(`https://ictstudentportal.onrender.com/document/finalSubmissionFormat/download`, { responseType: 'arraybuffer'});
 
       const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
@@ -178,7 +178,7 @@ const ProjectBoard = () => {
 
   const handleVivaVoceDownload = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/document/viva-voce/download`, { responseType: 'arraybuffer'});
+      const response = await axios.get(`https://ictstudentportal.onrender.com/document/viva-voce/download`, { responseType: 'arraybuffer'});
 
       const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
@@ -196,7 +196,7 @@ const ProjectBoard = () => {
     const fetchInitialProjectData = async () => {
       try {
         const id = student?.selectedProject;
-        const response = await axios.get(`http://localhost:3000/project/${id}`);
+        const response = await axios.get(`https://ictstudentportal.onrender.com/project/${id}`);
         setProjectData(response.data);
 
         if (student?.projectSelectedAt) {
@@ -218,7 +218,7 @@ const ProjectBoard = () => {
     const fetchQueries = async () => {
       try {
         const projectId = student?.selectedProject;
-        const response = await axios.get(`http://localhost:3000/discussion/${projectId}`);
+        const response = await axios.get(`https://ictstudentportal.onrender.com/discussion/${projectId}`);
         setQueries(response.data);
       } catch (err) {
         console.error('Error fetching discussion queries:', err);
@@ -229,7 +229,7 @@ const ProjectBoard = () => {
       const projectId = student?.selectedProject;
       const studentId = student?.s_id;
       try {
-        const response = await axios.get('http://localhost:3000/submission/check-final', {
+        const response = await axios.get('https://ictstudentportal.onrender.com/submission/check-final', {
           params: {
             s_id: studentId,
             p_id: projectId,
@@ -250,7 +250,7 @@ const ProjectBoard = () => {
     if (!newQuery.trim()) return;
 
     try {
-      const response = await axios.post(`http://localhost:3000/discussion`, {
+      const response = await axios.post(`https://ictstudentportal.onrender.com/discussion`, {
         p_id: student?.selectedProject,
         email: student?.email,
         query: newQuery,
@@ -264,7 +264,7 @@ const ProjectBoard = () => {
 
   const editQuery = async (queryId, updatedQuery) => {
     try {
-      const response = await axios.put(`http://localhost:3000/discussion/${queryId}`, {
+      const response = await axios.put(`https://ictstudentportal.onrender.com/discussion/${queryId}`, {
         email: student?.email,
         query: updatedQuery,
       });
@@ -281,7 +281,7 @@ const ProjectBoard = () => {
     if (!newComment.trim()) return;
 
     try {
-      const response = await axios.post(`http://localhost:3000/discussion/${queryId}/comments`, {
+      const response = await axios.post(`https://ictstudentportal.onrender.com/discussion/${queryId}/comments`, {
         commenterEmail: student?.email,
         comment: newComment,
       });
@@ -299,7 +299,7 @@ const ProjectBoard = () => {
 
   const likeQuery = async (queryId) => {
     try {
-      const response = await axios.put(`http://localhost:3000/discussion/${queryId}/like`);
+      const response = await axios.put(`https://ictstudentportal.onrender.com/discussion/${queryId}/like`);
       setQueries((prev) =>
         prev.map((query) =>
           query._id === queryId ? { ...query, likes: response.data.likes } : query
@@ -313,7 +313,7 @@ const ProjectBoard = () => {
   const likeComment = async (queryId, commentIndex) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/discussion/${queryId}/comments/${commentIndex}/like`
+        `https://ictstudentportal.onrender.com/${queryId}/comments/${commentIndex}/like`
       );
       setQueries((prev) =>
         prev.map((query) =>
@@ -343,7 +343,7 @@ const ProjectBoard = () => {
       formData.append('s_id', student?.s_id);
       formData.append('p_id', student?.selectedProject);
 
-      await axios.post('http://localhost:3000/submission/viva-voce', formData, {
+      await axios.post('https://ictstudentportal.onrender.com/submission/viva-voce', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -364,7 +364,7 @@ const ProjectBoard = () => {
     try {
       const s_id = student?.s_id;
       const p_id = student?.selectedProject;
-      const response = await axios.get(`http://localhost:3000/student/marks?s_id=${s_id}&p_id=${p_id}`);
+      const response = await axios.get(`https://ictstudentportal.onrender.com/student/marks?s_id=${s_id}&p_id=${p_id}`);
       setMarksData(response.data);
     } catch (error) {
       console.error('Error getting the marks:', error);
