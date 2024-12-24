@@ -1,0 +1,193 @@
+
+.homepage {
+  min-height: 100vh; 
+  overflow-y: auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  position: relative;
+  text-align: center;
+  background-color: #f8f9fa;
+  flex-direction: column;
+  padding-top: 50px; 
+}
+.homepage{
+  border: 2px solid #e0e0e0!important; 
+
+  border-radius: 12px; 
+  margin: 1px; 
+}
+
+@media (min-width: 768px) {
+  .homepage {
+    min-height: 110vh; 
+    padding-top: 115px; 
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .homepage {
+    min-height:  auto; 
+   
+    padding-top: 120px; 
+    padding-bottom: 30px;
+  }
+}
+
+
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+
+.icon-container {
+  position: absolute;
+  width: 69%;
+  height: 200px;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+
+.icon {
+  font-size: 3.5rem;
+  /* color: #00ff00; */
+     color:#00acc1 ;
+  position: absolute;
+}
+
+/* Specific positioning for each icon */
+.icon-star {
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-clock {
+  top: 40%;
+  left: -8%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-building {
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-smile {
+  top: 40%;
+  right: -8%;
+  transform: translate(50%, -50%);
+}
+
+.icon-money {
+  top: 10%;
+  right: 10%;
+  transform: translate(50%, -50%);
+}
+
+
+.content {
+  z-index: 1; 
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+.btn-success {
+  background-color: #00acc1;
+  border: none;
+}
+
+
+.search-bar input {
+  border-radius: 5px;
+}
+
+
+.signup-section {
+margin-top: 1rem;
+text-align: center; 
+}
+
+.signup-text {
+/* font-size: 1.2rem;
+color: #333;
+margin-bottom: 1rem; */
+font-size: 1.1rem;
+color: #555;
+line-height: 1.6;
+
+}
+
+.signup-btn {
+font-size: 1.1rem;
+padding: 0.75rem 1.5rem;
+border-radius: 50px; 
+background-color:#00acc1 ; 
+border: none;
+transition: background-color 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+background-color: #0093a7; 
+}
+
+
+
+@media (max-width: 1024px) {
+  .icon-container {
+    height: 250px;
+    top: -50px;
+  }
+
+  .icon {
+    font-size: 2.8rem; 
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon-container {
+    display: none; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .icon-container {
+    display: none;
+  }
+}

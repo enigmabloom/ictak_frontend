@@ -1,0 +1,498 @@
+/* Base styling for the homepage */
+.homepage {
+    min-height: 100vh; /* Full height for smaller screens */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top on small screens */
+    position: relative;
+    text-align: center;
+    background-color: #f8f9fa;
+    flex-direction: column;
+    padding-top: 50px; /* Add padding to ensure content is visible */
+  }
+  .homepage{
+    border: 2px solid #e0e0e0!important; /* Add a black border */
+     /* Optional: Add some padding inside */
+    border-radius: 12px; /* Optional: Rounded corners */
+    margin: 1px; /* Optional: Add margin to give space between elements */
+  }
+
+  @media (min-width: 768px) {
+    .homepage {
+      min-height: 150vh; /* Increase height for tablets */
+      padding-top: 80px; /* More space for tablets */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .homepage {
+      min-height: 200vh; /* Larger height for desktops */
+      padding-top: 120px; /* Adjust padding for desktop */
+    }
+  }
+  
+  /* Wrapper for content */
+  .wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Max width for better control */
+    margin: 0 auto;
+  }
+  
+  /* Icon container for positioning icons */
+  .icon-container {
+    position: absolute;
+    width: 69%;
+    height: 200px;
+    top: -70px; /* Position higher */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 3.5rem;
+    color: #00ff00;
+    position: absolute;
+  }
+  
+  /* Specific positioning for each icon */
+  .icon-star {
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-clock {
+    top: 40%;
+    left: -8%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-building {
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-smile {
+    top: 40%;
+    right: -8%;
+    transform: translate(50%, -50%);
+  }
+  
+  .icon-money {
+    top: 10%;
+    right: 10%;
+    transform: translate(50%, -50%);
+  }
+  
+  /* Content section */
+  .content {
+    z-index: 1; /* Keep content on top */
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Paragraph styling */
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Button styling */
+  .btn-success {
+    background-color: #00ff00;
+    border: none;
+  }
+  
+  /* Search bar styling */
+  .search-bar input {
+    border-radius: 5px;
+  }
+
+  /* Signup Section Styling */
+.signup-section {
+  margin-top: 2rem; /* Space between main content and signup */
+  text-align: center; /* Center-align the content */
+}
+
+.signup-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.signup-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* Rounded corners for a modern look */
+  background-color: #00ff00; /* Green button color */
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+  background-color: #007bff; /* Hover effect with a blue color */
+}
+
+  
+  /* Adjustments for tablets */
+  @media (max-width: 1024px) {
+    .icon-container {
+      height: 250px;
+      top: -50px;
+    }
+  
+    .icon {
+      font-size: 2.8rem; /* Slightly smaller icon size */
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Adjustments for mobile phones */
+  @media (max-width: 768px) {
+    .homepage {
+      min-height: 100vh; /* Ensure full height for phones */
+      padding-top: 20px; /* Adjust padding for better space */
+    }
+  
+    .icon-container {
+      height: 200px;
+      top: -40px;
+    }
+  
+    .icon {
+      font-size: 2.3rem; /* Adjust icon size for small screens */
+    }
+  
+    /* Adjust positions for icons on mobile */
+    .icon-clock {
+      top: 55%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .icon-smile {
+      top: 55%;
+      right: 5%;
+      transform: translate(50%, -50%);
+    }
+  
+    h2 {
+      font-size: 2.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+  
+  /* For very small phones (e.g., portrait view on smaller devices) */
+  @media (max-width: 480px) {
+    .homepage {
+      min-height: 100vh; /* Ensure content fits on small screens */
+      padding-top: 20px; /* Adequate padding for small screens */
+    }
+  
+    .icon-container {
+      height: 180px;
+      top: -20px;
+    }
+  
+    .icon {
+      font-size: 2rem; /* Smaller icons for very small screens */
+    }
+  
+    .icon-clock {
+      top: 60%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .icon-smile {
+      top: 60%;
+      right: 10%;
+      transform: translate(50%, -50%);
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+  }
+  /* 2 */
+  /* Base styling for the homepage */
+.homepage {
+    min-height: 100vh; /* Full height for smaller screens */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top on small screens */
+    position: relative;
+    text-align: center;
+    background-color: #f8f9fa;
+    flex-direction: column;
+    padding-top: 50px; /* Add padding to ensure content is visible */
+  }
+  .homepage{
+    border: 2px solid #e0e0e0!important; /* Add a black border */
+     /* Optional: Add some padding inside */
+    border-radius: 12px; /* Optional: Rounded corners */
+    margin: 1px; /* Optional: Add margin to give space between elements */
+  }
+  
+  @media (min-width: 768px) {
+    .homepage {
+      min-height: 120vh; /* Increase height for tablets */
+      padding-top: 80px; /* More space for tablets */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .homepage {
+      min-height: 200vh; /* Larger height for desktops */
+      padding-top: 120px; /* Adjust padding for desktop */
+    }
+  }
+  
+  /* Wrapper for content */
+  .wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Max width for better control */
+    margin: 0 auto;
+  }
+  
+  /* Icon container for positioning icons */
+  .icon-container {
+    position: absolute;
+    width: 69%;
+    height: 200px;
+    top: -70px; /* Position higher */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 3.5rem;
+    color: #00ff00;
+    position: absolute;
+  }
+  
+  /* Specific positioning for each icon */
+  .icon-star {
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-clock {
+    top: 40%;
+    left: -8%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-building {
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icon-smile {
+    top: 40%;
+    right: -8%;
+    transform: translate(50%, -50%);
+  }
+  
+  .icon-money {
+    top: 10%;
+    right: 10%;
+    transform: translate(50%, -50%);
+  }
+  
+  /* Content section */
+  .content {
+    z-index: 1; /* Keep content on top */
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Paragraph styling */
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Button styling */
+  .btn-success {
+    background-color: #00ff00;
+    border: none;
+  }
+  
+  /* Search bar styling */
+  .search-bar input {
+    border-radius: 5px;
+  }
+  
+  /* Signup Section Styling */
+  .signup-section {
+  margin-top: 2rem; /* Space between main content and signup */
+  text-align: center; /* Center-align the content */
+  }
+  
+  .signup-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  }
+  
+  .signup-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* Rounded corners for a modern look */
+  background-color: #00ff00; /* Green button color */
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+  }
+  
+  .signup-btn:hover {
+  background-color: #007bff; /* Hover effect with a blue color */
+  }
+  
+  
+  /* Adjustments for tablets */
+  @media (max-width: 1024px) {
+    .icon-container {
+      height: 250px;
+      top: -50px;
+    }
+  
+    .icon {
+      font-size: 2.8rem; /* Slightly smaller icon size */
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Adjustments for mobile phones */
+  @media (max-width: 768px) {
+    .homepage {
+      min-height: 100vh; /* Ensure full height for phones */
+      padding-top: 20px; /* Adjust padding for better space */
+    }
+  
+    .icon-container {
+      height: 200px;
+      top: -40px;
+    }
+  
+    .icon {
+      font-size: 1rem; /* Adjust icon size for small screens */
+    }
+  
+    /* Adjust positions for icons on mobile */
+    .icon-clock {
+      top: 55%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .icon-smile {
+      top: 55%;
+      right: 5%;
+      transform: translate(50%, -50%);
+    }
+  
+    h2 {
+      font-size: 2.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+  
+  /* For very small phones (e.g., portrait view on smaller devices) */
+  @media (max-width: 480px) {
+    .homepage {
+      min-height: 100vh; /* Ensure content fits on small screens */
+      padding-top: 20px; /* Adequate padding for small screens */
+    }
+  
+    .icon-container {
+      height: 180px;
+      top: -20px;
+    }
+  
+    .icon {
+      font-size: 2rem; /* Smaller icons for very small screens */
+    }
+  
+    .icon-clock {
+      top: 60%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .icon-smile {
+      top: 60%;
+      right: 10%;
+      transform: translate(50%, -50%);
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+  }
+  

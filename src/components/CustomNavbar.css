@@ -1,0 +1,18 @@
+.customNavbar-login-button {
+    transition: all 0.3s ease;
+  }
+  
+.customNavbar-login-button:hover {
+    color: white !important;
+    background-color: #00acc1;
+    border-color: #00acc1;
+}
+
+.customNavbar-signup-button {
+    transition: all 0.3s ease;
+}
+
+customNavbar-signup-button:hover {
+    background-color: #008a9c !important;
+    border-color: #008a9c !important;
+}
