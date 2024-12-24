@@ -28,7 +28,7 @@ const StudentDashboard = () => {
 
       useEffect(() => {
         async function fetchProject () {
-            const res = await axios.get(`http://localhost:3000/project/all`);
+            const res = await axios.get(`https://ictstudentportal.onrender.com/project/all`);
             try {
                 setProjects(res.data);
             } catch (error) {
@@ -46,12 +46,12 @@ const StudentDashboard = () => {
         try {
             const selectedProjectId = projects[selectedCard].p_id;
             const studentId = student?.s_id;
-            const response1 = await axios.put(`http://localhost:3000/student/selectProject`, {
+            const response1 = await axios.put(`https://ictstudentportal.onrender.com/student/selectProject`, {
                 s_id: studentId,
                 p_id: selectedProjectId
             });
 
-            await axios.post(`http://localhost:3000/submission/initial`, {
+            await axios.post(`https://ictstudentportal.onrender.com/submission/initial`, {
                 s_id: studentId,
                 p_id: selectedProjectId
             })

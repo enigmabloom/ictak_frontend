@@ -65,7 +65,7 @@ const Signup = () => {
     
     try {
       // const response = await axios.post('https://ictak-internship-portal-student-view-api.vercel.app//student/register', {
-      const response = await axios.post('http://localhost:3000/student/register', {
+      const response = await axios.post('https://ictstudentportal.onrender.com/student/register', {
         name,
         email,
         password,
